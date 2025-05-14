@@ -11,6 +11,7 @@ import PlaceOrder from './pages/PlaceOrder'
 import Orders from './pages/Orders'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import SearchBar from './components/SearchBar'
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
     {/* //adding padding x for different screen sizes */}
       
       <Navbar />
+      <SearchBar/>
       {/* // navbar will be visible to all pages because we have mounted it before all the pages */}
 
       <Routes>

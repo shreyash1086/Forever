@@ -9,9 +9,11 @@ const BestSeller = () => {
     const [bestSeller, setBestSeller] = useState([]);
 
     useEffect(() => { 
-        const bestProduct = products.filter((item) => (item.bestseller));//collecting products from the products by applying the filter on each item selection the items that ha best seller property as true
+        const bestProduct = products.filter((item) => (item.bestseller));
+        //collecting products from the products by applying the filter on each item selection the items that ha best seller property as true
         setBestSeller(bestProduct.slice(0,5))//providing only 5 products
-     },[])
+    }, [])
+    
   return (
       <div className='my-10'>
           <div className='text-center text-3xl py-8'>
