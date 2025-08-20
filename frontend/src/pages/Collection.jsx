@@ -14,10 +14,10 @@ const Collection = () => {
   const [sortType, setSortType] = useState('relevent')
 
   const toggleCategory = (e) => {
-    if (category.includes(e.target.value)) {
+    if (category.includes(e.target.value)) { // removes category if present
       setCategory(prev => prev.filter(item => item !== e.target.value))
     } else {
-      setCategory(prev => [...prev, e.target.value])
+      setCategory(prev => [...prev, e.target.value]) // adds category if not present
     }
   }
 
@@ -69,7 +69,7 @@ const Collection = () => {
 
   useEffect(() => {
     applyFilter()
-  },[category,subCategory,search,showSearch])
+  },[category,subCategory,search,showSearch,products])
 
   useEffect(() => {
     sortProduct()

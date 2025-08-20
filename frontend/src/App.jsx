@@ -12,7 +12,7 @@ import Orders from './pages/Orders'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import SearchBar from './components/SearchBar'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 const App = () => {
   return (
@@ -24,7 +24,7 @@ const App = () => {
       {/* // navbar will be visible to all pages because we have mounted it before all the pages */}
 
       <Routes>
-        <Route path='/' element={<Home />} /> // whenever we open the '/' it will mount the home page
+        <Route path='/' element={<Home />} />
         <Route path='/collection' element={<Collection />}/>
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
@@ -40,4 +40,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
