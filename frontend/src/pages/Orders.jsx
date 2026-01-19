@@ -62,9 +62,9 @@ const Orders = () => {
               <div className='md:w-1/2 flex justify-between'>
                 <div className='flex items-center gap-2'>
                   <p className='min-w-2 h-2 rounded-full bg-green-500'></p>
-                  <p className='text-sm md:text-base'>Ready to ship</p>
+                  <p className='text-sm md:text-base'>{item.status}</p>
                 </div>
-                <button className='border border-gray-300 px-4 py-2 text-sm font-medium rounded-sm'>Track Order</button>
+                <button onClick={()=>{loadOrderData()}} className='border cursor-pointer hover:border-gray-700 border-gray-300 px-4 py-2 text-sm font-medium rounded-sm'>Track Order</button>
               </div>
             </div>
           ))

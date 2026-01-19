@@ -39,6 +39,7 @@ const registerUser = async (req,res) => {
         const { name, email, password } = req.body;
         //Checking user already exist or not
         const exists = await userModel.findOne({ email });
+
         if (exists) {
             return res.json({success: false, message:"User already Exists"})
         }

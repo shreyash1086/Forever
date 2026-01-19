@@ -8,8 +8,11 @@ const addToCart = async (req,res) => {
         const { userId, itemId, size } = req.body;
 
         const userData = await userModel.findById(userId);
+         
         let cartData = await userData.cartData;
 
+        console.log(cartData);
+        
 
         if (cartData[itemId]) {
             if (cartData[itemId][size]) {
@@ -43,7 +46,7 @@ const updateCart = async (req, res) => {
         const userData = await userModel.findById(userId);
         let cartData = await userData.cartData;
 
-        cartData[itemId][size] = quantity
+        cartData[itemId][size] = quantity;
 
         await userModel.findByIdAndUpdate(userId, { cartData })
 

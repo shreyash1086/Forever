@@ -1,6 +1,9 @@
 import orderModel from "../models/orderModel.js";
 import userModel from "../models/userModel.js";
 
+const currency = "₹";
+const deliveryCharge = 10;
+
 //placing order using COD method
 const placeOrder = async (req,res) => {
     
@@ -44,7 +47,13 @@ const placeOrderRazorpay = async (req, res) => {
 
 //All order data for admin panel
 const allOrders = async (req, res) => {
-
+    try {
+        const order = await orderModel.find({})
+        res.json({success:true,order})
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: error.message });
+    }
 }
 
 //User order data for frontend
@@ -60,8 +69,15 @@ const userOrders = async (req, res) => {
 }
 
 //update order status from admin panel
-const UpdateStatus = async (req, res) => {
-    
+const updateStatus = async (req, res) => {
+    try {
+        const { orderId, status } = req.body;
+        await orderModel.findByIdAndUpdate(orderId, { status })
+        res.json({ success: true, message: "Order status updated" })
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: error.message });
+    }
 }
 
-export {placeOrder, placeOrderStripe,placeOrderRazorpay, allOrders,userOrders,UpdateStatus}
+export {placeOrder, placeOrderStripe,placeOrderRazorpay, allOrders,userOrders,updateStatus}

@@ -7,7 +7,7 @@ import List from './pages/list'
 import Orders from './pages/orders'
 import { useState } from 'react'
 import Login from './components/Login'
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 import { useEffect } from 'react'
 
 export const backendUrl = import.meta.env.VITE_BACKEND_URL;
